@@ -1,9 +1,7 @@
 // import React, { useEffect, useState } from 'react';
 // import axios from 'axios';
-
 // function AxiosT() {
 //     const [data, setData] = useState(null);
-
 //     useEffect(() => {
 //         const fetchData = async () => {
 //             try {
@@ -19,10 +17,8 @@
 //                 console.error('Error fetching data:', error);
 //             }
 //         };
-
 //         fetchData();
 //     }, []);
-
 //     return (
 //         <div>
 //             {data ? (
@@ -40,17 +36,12 @@
 //         </div>
 //     );
 // }
-
 // // export default AxiosT;
-
-
 // import React, { useEffect, useState } from 'react';
 // import axios from 'axios';
-
 // function AxiosT() {
 //     const [query, setQuery] = useState(''); // State to hold the input query
 //     const [data, setData] = useState(null); // State to hold fetched data
-
 //     useEffect(() => {
 //         const fetchData = async () => {
 //             try {
@@ -66,16 +57,13 @@
 //                 console.error('Error fetching data:', error);
 //             }
 //         };
-
 //         if (query.trim() !== '') {
 //             fetchData();
 //         }
 //     }, [query]); // Fetch data whenever query state changes
-
 //     const handleInputChange = (event) => {
 //         setQuery(event.target.value); // Update query state as user types
 //     };
-
 //     return (
 //         <div>
 //             <input
@@ -99,19 +87,14 @@
 //         </div>
 //     );
 // }
-
 // export default AxiosT;
-
-
 // import React, { useEffect, useState } from 'react';
 // import axios from 'axios';
 // import './axio.css'; // Import CSS file
-
 // function AxiosT() {
 //     const [query, setQuery] = useState(''); // State to hold the input query
 //     const [data, setData] = useState(null); // State to hold fetched data
 //     const [selectedAddress, setSelectedAddress] = useState(''); // State to hold selected address
-
 //     useEffect(() => {
 //         const fetchData = async () => {
 //             try {
@@ -127,20 +110,16 @@
 //                 console.error('Error fetching data:', error);
 //             }
 //         };
-
 //         if (query.trim() !== '') {
 //             fetchData();
 //         }
 //     }, [query]); // Fetch data whenever query state changes
-
 //     const handleInputChange = (event) => {
 //         setQuery(event.target.value); // Update query state as user types
 //     };
-
 //     const handleAddressClick = (address) => {
 //         setSelectedAddress(address); // Set selected address on click
 //     };
-
 //     return (
 //         <div className="input-container">
 //             <input
@@ -171,9 +150,7 @@
 //         </div>
 //     );
 // }
-
 // export default AxiosT;
-
 
 
 
@@ -190,7 +167,7 @@ function AxiosT() {
             try {
                 const response = await axios.get('https://api.everythinglocation.com/address/complete', {
                     params: {
-                        lqtkey: 'CR85-FA39-TY63-BB53',
+                        lqtkey: 'HE59-YH98-MP91-ZJ44',
                         query: query,
                         country: 'USA'
                     }
