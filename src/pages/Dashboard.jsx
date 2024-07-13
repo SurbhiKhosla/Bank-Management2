@@ -3,10 +3,13 @@ import axios from "axios";
 import "../css/Dashboard.css"; // Make sure to import your CSS file for styling
 import TransactionHistory from "../components/Transactionhistory";
 import { useAuth } from "../contexts/AuthContext";
+import DepositForm from "../components/DepositForm";
+import Transfer from "../components/Transfer";
+
 
 const Dashboard = () => {
-  const { email, customerId, userId } = useAuth();
-  const [userName, setUserName] = useState(email);
+  const { email, customerId, username } = useAuth();
+  const [userName, setUserName] = useState(username);
   const [transactions, setTransactions] = useState([]);
   const [balance, setBalance] = useState(0);
   const [loading, setLoading] = useState(true);
@@ -51,6 +54,22 @@ const Dashboard = () => {
     fetchData();
   }, [customerId]);
 
+  // Add useEffect for periodically updating the balance
+  useEffect(() => {
+    const intervalId = setInterval(async () => {
+      try {
+        const balanceResponse = await axios.get(
+          `http://localhost:5050/api/accounts/${customerId}`
+        );
+        setBalance(balanceResponse.data.balance);
+      } catch (error) {
+        console.error("Error updating balance:", error);
+      }
+    }, 10000); // Update every 10 seconds
+
+    return () => clearInterval(intervalId);
+  }, [customerId]);
+
   function formatDateTime(date) {
     const formattedDate = date.toLocaleDateString();
     const formattedTime = date.toLocaleTimeString([], {
@@ -82,9 +101,10 @@ const Dashboard = () => {
   };
 
   return (
-    <div className="dashboard">
+    <div className="dashboard-container">
       {loading ? (
         <div className="loader">
+        
           <div>
             <ul>
               {[...Array(5)].map((_, index) => (
@@ -102,7 +122,7 @@ const Dashboard = () => {
         <div className="dashboard-content">
           <div className="left-content">
             <div className="account-summary">
-              <div className="card">
+              <div className="dashboard-card">
                 <div className="content">
                   <div className="username">Welcome {userName}</div>
                   <div className="customer-id">
@@ -147,11 +167,8 @@ const Dashboard = () => {
                     Deposit fund
                   </button>
                   <button
-                    className={`side_button ${
-                      activeButton === "statement" ? "active" : ""
-                    }`}
+                    className="side_button"
                     onClick={() => {
-                      handleButtonClick("statement");
                       handleDownloadStatement();
                     }}
                   >
@@ -162,8 +179,10 @@ const Dashboard = () => {
             </div>
             <div className="main-content">
               {activeButton === "transaction" && (
-                <TransactionHistory transactions={transactions} />
+              <TransactionHistory transactions={transactions} />
               )}
+              {activeButton === "deposit" && <DepositForm />}
+              {activeButton === "transfer" && <Transfer />}
             </div>
           </div>
         </div>

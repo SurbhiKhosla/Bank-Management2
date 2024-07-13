@@ -1,0 +1,155 @@
+.register-container {
+  width: 100%;
+  min-width: 650px;
+  min-height:90vh;
+  background:linear-gradient(744deg,  #5b42f3,#af40ff 80%,  #00ddeb);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+}
+.errormess{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+ color: #135194;
+}
+.otp-button{
+  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:0 auto;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  padding-bottom: 10px;
+}
+.verifyy{
+  background:linear-gradient(744deg,  #5b42f3,#af40ff 80%,  #00ddeb);
+  flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin:0 auto;
+padding:10px;
+border-radius: 90px;
+width: 50%;
+
+
+
+}
+.register-border{
+  transform: scale(0.8); /* Scale down the entire container */
+  transform-origin: center;
+   padding-left: 10px;
+   padding-right: 10px;
+   padding-bottom: 10px;
+}
+.register-card-body {
+  width: 650px;
+  color: black;
+  padding: 20px;
+  margin-bottom: 25px;
+  background: whitesmoke;
+  border-radius: 40px;
+  border: 7px solid black;
+}
+
+.register-card-title {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.register-card-subtitle {
+  font-size: 15px;
+  color: #706363;
+
+}
+
+.register-input-group {
+  display: flex;
+  align-items: center;
+}
+
+.register-form-control {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 2px solid #135194;
+  border-radius: 15px;
+}
+
+.is-valid {
+  border-color: green;
+}
+
+.is-invalid {
+  border-color: red;
+}
+
+.register-form-label {
+  font-weight: bold;
+}
+
+
+.circle-text{
+top:6px;
+}
+
+.submittt {
+  font-family: Arial, Helvetica, sans-serif;
+  font-weight: bold;
+  color: white;
+  height: 60px;
+  background-color: #171717;
+  border-radius: 6rem;
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+}
+
+.submittt span:not(:nth-child(6)) {
+  position: absolute;
+  left: 50%;
+  top: 60%;
+  transform: translate(-50%, -50%);
+  height: 20px;
+  width: 20px;
+  background-color: #0c66ed;
+  border-radius: 50%;
+  transition: .6s ease;
+}
+
+.submittt span:nth-child(6) {
+  position: relative;
+  height: 30px;
+  width: 30px;
+}
+
+.submittt span:nth-child(1) {
+  transform: translate(-3.3em, -4em);
+}
+
+.submittt span:nth-child(2) {
+  transform: translate(-6em, 1.9em);
+}
+
+.submittt span:nth-child(3) {
+  transform: translate(-.2em, 1.8em);
+}
+
+.submittt span:nth-child(4) {
+  transform: translate(3.9em, 1.9em);
+}
+
+.submittt span:nth-child(5) {
+  transform: translate(3.5em, -3.8em);
+
+}
+
+.submittt:hover span:not(:nth-child(6)) {
+  transform: translate(-50%, -50%) scale(35);
+  transition: 4s ease;
+}
